@@ -70,7 +70,7 @@ export default function Hero() {
 
             <motion.p
               variants={itemVariants}
-              className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto text-center md:text-left"
+              className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto md:mx-0 text-center md:text-left"
             >
               {t("hero.description")}
             </motion.p>
