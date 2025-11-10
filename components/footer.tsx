@@ -1,24 +1,26 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Github, Linkedin, Twitter, Mail } from "lucide-react"
+import { logo } from "@/assets/image";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   const socialLinks = [
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Mail, href: "#", label: "Email" },
-  ]
+    { icon: Github, href: "#", label: t("footer.github") },
+    { icon: Linkedin, href: "#", label: t("footer.linkedin") },
+    { icon: Twitter, href: "#", label: t("footer.twitter") },
+    { icon: Mail, href: "#", label: t("footer.email") },
+  ];
 
   const footerLinks = [
-    { label: "About", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Portfolio", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Privacy", href: "#" },
-    { label: "Terms", href: "#" },
-  ]
+    { label: t("footer.about"), href: "#about" },
+    { label: t("header.projects"), href: "#" },
+  ];
 
   return (
     <footer className="bg-secondary text-secondary-foreground py-12 px-4 sm:px-6 lg:px-8">
@@ -33,57 +35,27 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="font-bold text-primary-foreground text-sm">HC</span>
+              <div className="w-16 h-16 bg-white p-2 rounded-lg flex items-center justify-center relative">
+                <Image
+                  alt="logo"
+                  src={logo}
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <span className="font-bold text-lg">Hans Creative</span>
+              <span className="font-bold text-lg">Hans Studio</span>
             </div>
-            <p className="text-sm opacity-75">
-              Crafting digital excellence through innovative web and mobile solutions.
-            </p>
+            <p className="text-sm opacity-75">{t("footer.tagline")}</p>
           </motion.div>
 
           {/* Links */}
           <div className="grid grid-cols-2 gap-4">
-            {footerLinks.slice(0, 2).map((link, i) => (
+            {footerLinks.map((link, i) => (
               <motion.a
                 key={i}
                 href={link.href}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                viewport={{ once: true }}
-                className="text-sm hover:opacity-100 opacity-75 transition-opacity"
-              >
-                {link.label}
-              </motion.a>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {footerLinks.slice(2, 4).map((link, i) => (
-              <motion.a
-                key={i}
-                href={link.href}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: (i + 2) * 0.1 }}
-                viewport={{ once: true }}
-                className="text-sm hover:opacity-100 opacity-75 transition-opacity"
-              >
-                {link.label}
-              </motion.a>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
-            {footerLinks.slice(4).map((link, i) => (
-              <motion.a
-                key={i}
-                href={link.href}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: (i + 4) * 0.1 }}
                 viewport={{ once: true }}
                 className="text-sm hover:opacity-100 opacity-75 transition-opacity"
               >
@@ -105,11 +77,39 @@ export default function Footer() {
             viewport={{ once: true }}
             className="text-sm opacity-75"
           >
-            © 2025 Hans Creative. All rights reserved.
+            {t("footer.copyright")}
           </motion.p>
 
           {/* Social Links */}
           <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="flex gap-4"
+          >
+            <div className="flex items-center gap-4">
+              <div className="mr-4">
+                <p className="mt-3 font-bold text-sm">@Founder</p>
+                <Link
+                  className="text-blue-300 text-sm font-semibold"
+                  href="https://achmad-hanafy-portofolio.vercel.app/"
+                  target="_black"
+                >
+                  Achmad Hanafy
+                </Link>
+              </div>
+              <motion.a
+                href="https://www.linkedin.com/in/achmad-hanafy/"
+                whileHover={{ y: -4 }}
+                target="_black"
+                className="w-10 h-10 rounded-lg bg-secondary-foreground/10 flex items-center justify-center hover:bg-secondary-foreground/20 transition-colors"
+              >
+                <Linkedin size={18} />
+              </motion.a>
+            </div>
+          </motion.div>
+          {/* <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
@@ -129,9 +129,9 @@ export default function Footer() {
                 </motion.a>
               )
             })}
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </footer>
-  )
+  );
 }

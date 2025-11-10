@@ -1,0 +1,111 @@
+{
+  "header": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "Welcome to Hans Studio",
+    "title": "Crafting Digital Excellence",
+    "description": "We deliver innovative web and mobile application solutions, enhanced by AI-powered capabilities when needed, to transform your vision into reality. By combining intelligent automation, modern design, and seamless user experiences, we help businesses stay ahead in the digital era.",
+    "exploreWork": "Explore Our Work",
+    "learnMore": "Learn More",
+    "projects": "Projects Delivered",
+    "team": "Team Members",
+    "satisfaction": "Client Satisfaction",
+    "experience":"Years of experience"
+  },
+  "contributions": {
+    "title": "Our Contributions",
+    "subtitle": "We specialize in delivering comprehensive technology solutions that drive business success",
+    "web": {
+      "title": "Web Application",
+      "description": "Building responsive, performant websites and web applications using modern technologies and best practices."
+    },
+    "mobile": {
+      "title": "Mobile Application",
+      "description": "Creating native and cross-platform mobile applications that users love with intuitive interfaces."
+    },
+    "performance": {
+      "title": "Performance",
+      "description": "Optimizing applications for speed, scalability, and efficiency to ensure the best user experience."
+    },
+    "collaboration": {
+      "title": "AI Solutions",
+      "description": "Implementing powerful AI platforms that integrate seamlessly into your business ecosystem—enhancing automation, improving decision-making, and unlocking new opportunities for innovation and growth."
+    }
+  },
+  "projects": {
+    "title": "Project Showcase",
+    "viewSite": "View application",
+    "subtitle": "Explore our portfolio of successful projects that demonstrate our expertise and commitment to excellence",
+    "viewProject": "View Project",
+    "underDevelopment": "Doesn't deploy yet",
+    "list": [
+      {
+        "title": "E-Commerce Platform",
+        "category": "Web Application",
+        "description": "A full-featured e-commerce solution with inventory management and payment integration."
+      },
+      {
+        "title": "Fitness Tracking App",
+        "category": "Mobile Application",
+        "description": "Cross-platform mobile app for tracking workouts and nutrition with real-time insights."
+      },
+      {
+        "title": "SaaS Analytics Dashboard",
+        "category": "Web Application",
+        "description": "Real-time analytics platform providing comprehensive business insights and reporting."
+      },
+      {
+        "title": "Social Media Manager",
+        "category": "Web Application",
+        "description": "Centralized platform for managing multiple social media accounts and scheduling posts."
+      },
+      {
+        "title": "Healthcare Portal",
+        "category": "Web & Mobile",
+        "description": "Secure patient management system with telemedicine capabilities and appointment scheduling."
+      },
+      {
+        "title": "AI Content Generator",
+        "category": "Web Application",
+        "description": "AI-powered tool for generating optimized content for marketing campaigns and social media."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let's collaborate and create something amazing together",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "emailValue": "hello@hanscreative.com",
+    "phoneValue": "+1 (555) 123-4567",
+    "locationValue": "San Francisco, CA 94110",
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your project...",
+    "sendMessage": "Send Message",
+    "sendEmail": "Send Email",
+    "copied": "Copied!"
+  },
+  "footer": {
+    "tagline": "Crafting digital excellence through innovative web and mobile solutions.",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "copyright": "© 2025 Hans Studio. All rights reserved.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "email": "Email"
+  }
+}

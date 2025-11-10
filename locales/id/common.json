@@ -1,0 +1,111 @@
+{
+  "header": {
+    "about": "Tentang",
+    "projects": "Proyek",
+    "contact": "Kontak",
+    "getStarted": "Mulai Sekarang"
+  },
+  "hero": {
+    "badge": "Selamat datang di Hans Studio",
+    "title": "Menciptakan Keunggulan Digital",
+    "description": "Kami menyediakan solusi aplikasi web dan seluler yang inovatif, yang disempurnakan dengan kemampuan berbasis AI saat dibutuhkan, untuk mewujudkan visi Anda. Dengan menggabungkan otomatisasi cerdas, desain modern, dan pengalaman pengguna yang lancar, kami membantu bisnis tetap terdepan di era digital.",
+    "exploreWork": "Jelajahi Karya Kami",
+    "learnMore": "Pelajari Lebih Lanjut",
+    "projects": "Proyek Terselesaikan",
+    "team": "Anggota Tim",
+    "satisfaction": "Kepuasan Klien",
+    "experience": "Pengalaman Bertahun-tahun"
+  },
+  "contributions": {
+    "title": "Kontribusi Kami",
+    "subtitle": "Kami mengkhususkan diri dalam memberikan solusi teknologi komprehensif yang mendorong kesuksesan bisnis",
+    "web": {
+      "title": "Aplikasi Web",
+      "description": "Membangun website dan aplikasi web yang responsif dan berkinerja menggunakan teknologi modern dan praktik terbaik."
+    },
+    "mobile": {
+      "title": "Aplikasi Mobile",
+      "description": "Membuat aplikasi mobile native dan cross-platform yang dicintai pengguna dengan antarmuka yang intuitif."
+    },
+    "performance": {
+      "title": "Performa",
+      "description": "Mengoptimalkan aplikasi untuk kecepatan, skalabilitas, dan efisiensi guna memastikan pengalaman pengguna terbaik."
+    },
+    "collaboration": {
+      "title": "Solusi AI",
+      "description": "Menerapkan platform AI yang terintegrasi secara menyeluruh ke dalam ekosistem bisnis Anda—meningkatkan otomatisasi, memperkuat pengambilan keputusan, serta membuka peluang baru untuk inovasi dan pertumbuhan."
+    }
+  },
+  "projects": {
+    "title": "Pameran Proyek",
+    "viewSite": "Lihat aplikasi",
+    "underDevelopment": "Belum di publikasi",
+    "subtitle": "Jelajahi portofolio proyek sukses kami yang menunjukkan keahlian dan komitmen kami terhadap keunggulan",
+    "viewProject": "Lihat Proyek",
+    "list": [
+      {
+        "title": "Platform E-Commerce",
+        "category": "Aplikasi Web",
+        "description": "Solusi e-commerce lengkap dengan manajemen inventaris dan integrasi pembayaran."
+      },
+      {
+        "title": "Aplikasi Pelacakan Kebugaran",
+        "category": "Aplikasi Mobile",
+        "description": "Aplikasi mobile cross-platform untuk melacak latihan dan nutrisi dengan wawasan real-time."
+      },
+      {
+        "title": "Dashboard Analitik SaaS",
+        "category": "Aplikasi Web",
+        "description": "Platform analitik real-time yang menyediakan wawasan bisnis komprehensif dan pelaporan."
+      },
+      {
+        "title": "Pengelola Media Sosial",
+        "category": "Aplikasi Web",
+        "description": "Platform terpusat untuk mengelola beberapa akun media sosial dan menjadwalkan posting."
+      },
+      {
+        "title": "Portal Kesehatan",
+        "category": "Web & Mobile",
+        "description": "Sistem manajemen pasien yang aman dengan kemampuan telemedicine dan penjadwalan janji temu."
+      },
+      {
+        "title": "Generator Konten AI",
+        "category": "Aplikasi Web",
+        "description": "Alat bertenaga AI untuk menghasilkan konten yang dioptimalkan untuk kampanye pemasaran dan media sosial."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Memiliki proyek dalam pikiran? Mari berkolaborasi dan menciptakan sesuatu yang luar biasa bersama-sama",
+    "email": "Email",
+    "phone": "Telepon",
+    "location": "Lokasi",
+    "emailValue": "hello@hanscreative.com",
+    "phoneValue": "+1 (555) 123-4567",
+    "locationValue": "San Francisco, CA 94110",
+    "name": "Nama",
+    "namePlaceholder": "Nama Anda",
+    "emailLabel": "Email",
+    "emailPlaceholder": "email@anda.com",
+    "message": "Pesan",
+    "messagePlaceholder": "Ceritakan tentang proyek Anda...",
+    "sendMessage": "Kirim Pesan",
+    "sendEmail": "Kirim Email",
+    "copied": "Disalin!"
+  },
+  "footer": {
+    "tagline": "Menciptakan keunggulan digital melalui solusi web dan mobile yang inovatif.",
+    "about": "Tentang",
+    "services": "Layanan",
+    "portfolio": "Portofolio",
+    "blog": "Blog",
+    "privacy": "Privasi",
+    "terms": "Syarat",
+    "copyright": "© 2025 Hans Studio. Semua hak dilindungi.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "email": "Email"
+  }
+}

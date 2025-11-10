@@ -1,0 +1,8 @@
+export { default as headerCta} from '../public/3d-cta.webp'
+export { default as farmbyteLogo} from '../public/farmbyte.webp'
+export { default as ifgLifeLogo} from '../public/ifg-life.jpeg'
+export { default as jasindo} from '../public/jasindo.webp'
+export { default as nuon} from '../public/nuon.webp'
+export { default as oneByIfg} from '../public/one-ifg.webp'
+export { default as astraOtoparts} from '../public/astra-otoparts.png'
+export { default as logo} from '../public/logo.webp'

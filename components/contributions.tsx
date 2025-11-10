@@ -1,33 +1,66 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Code, Smartphone, Zap, Users } from "lucide-react"
+import { motion } from "framer-motion";
+import { Code, Smartphone, Zap, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import Marquee from "react-fast-marquee";
+import {
+  farmbyteLogo,
+  ifgLifeLogo,
+  jasindo,
+  nuon,
+  oneByIfg,
+} from "@/assets/image";
+import Image from "next/image";
+
+const clients = [
+  {
+    name: "Farmbyte",
+    img: farmbyteLogo,
+  },
+  {
+    name: "IFG Life",
+    img: ifgLifeLogo,
+  },
+  {
+    name: "Jasindo",
+    img: jasindo,
+  },
+  {
+    name: "Nuon",
+    img: nuon,
+  },
+  {
+    name: "One by IFG",
+    img: oneByIfg,
+  },
+];
 
 export default function Contributions() {
+  const { t } = useTranslation();
+
   const contributions = [
     {
       icon: Code,
-      title: "Web Development",
-      description:
-        "Building responsive, performant websites and web applications using modern technologies and best practices.",
+      titleKey: "contributions.web.title",
+      descKey: "contributions.web.description",
     },
     {
       icon: Smartphone,
-      title: "Mobile Solutions",
-      description: "Creating native and cross-platform mobile applications that users love with intuitive interfaces.",
+      titleKey: "contributions.mobile.title",
+      descKey: "contributions.mobile.description",
     },
     {
       icon: Zap,
-      title: "Performance",
-      description: "Optimizing applications for speed, scalability, and efficiency to ensure the best user experience.",
+      titleKey: "contributions.performance.title",
+      descKey: "contributions.performance.description",
     },
     {
       icon: Users,
-      title: "AI Solutions",
-      description:
-        "Harnessing the power of artificial intelligence to deliver innovative, data-driven solutions that optimize processes, enhance decision-making, and drive business growth.",
+      titleKey: "contributions.collaboration.title",
+      descKey: "contributions.collaboration.description",
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -38,7 +71,7 @@ export default function Contributions() {
         delayChildren: 0.2,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -47,7 +80,7 @@ export default function Contributions() {
       y: 0,
       transition: { duration: 0.6 },
     },
-  }
+  };
 
   return (
     <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
@@ -59,9 +92,11 @@ export default function Contributions() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">Our Contributions</h2>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+            {t("contributions.title")}
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We specialize in delivering comprehensive technology solutions that drive business success
+            {t("contributions.subtitle")}
           </p>
         </motion.div>
 
@@ -73,7 +108,7 @@ export default function Contributions() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
           {contributions.map((item, i) => {
-            const Icon = item.icon
+            const Icon = item.icon;
             return (
               <motion.div
                 key={i}
@@ -88,13 +123,30 @@ export default function Contributions() {
                 >
                   <Icon className="text-primary" size={24} />
                 </motion.div>
-                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="font-semibold text-lg mb-2">
+                  {t(item.titleKey)}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {t(item.descKey)}
+                </p>
               </motion.div>
-            )
+            );
           })}
         </motion.div>
       </div>
+      <Marquee pauseOnHover speed={50} className="mt-12 mx-[-30px]">
+        {/* your logos/components here */}
+        {clients.map((item) => (
+          <div style={{ width: window.innerWidth / clients.length }} className="mr-8 md:mr-0">
+            <Image
+              key={item.name}
+              src={item.img}
+              alt={item.name}
+              className="w-[150px] h-[150px] md:w-[150px] md:h-[150px] object-contain"
+            />
+          </div>
+        ))}
+      </Marquee>
     </section>
-  )
+  );
 }
