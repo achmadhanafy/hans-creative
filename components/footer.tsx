@@ -42,7 +42,7 @@ export default function Footer() {
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-bold text-lg">Hans Studio</span>
+              <span className="font-bold text-lg">Hans Digital Studio</span>
             </div>
             <p className="text-sm opacity-75">{t("footer.tagline")}</p>
           </motion.div>

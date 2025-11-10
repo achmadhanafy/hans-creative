@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://hanstudio.vercel.app
+
+# Sitemaps
+Sitemap: https://hanstudio.vercel.app/sitemap.xml
