@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "Hans Digital Studio - Web & Mobile App Solutions",
   description:
     "Hans Digital Studio is a professional software house specializing in web and mobile application development. We deliver innovative, AI-powered solutions to help businesses grow and stay ahead in the digital era.",
+  other: {
+    "google-site-verification": "oMHU1XqI60Vf07wifnoOIOKSz8jdlbd9zZN7edlUDFU",
+  },
   keywords: [
     "Hans Digital Studio",
     "web development",
