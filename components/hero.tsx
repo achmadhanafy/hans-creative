@@ -79,7 +79,7 @@ export default function Hero() {
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-4"
             >
-              <a href="#projects" className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+              <a href="#featured-works" className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
                 {t("hero.exploreWork")} <ArrowRight size={18} />
               </a>
               <a href="#about" className="px-8 py-3 border border-border text-foreground rounded-lg font-medium hover:bg-muted transition-colors">

@@ -9,6 +9,37 @@ import BrowserIcon from "./icon/browser";
 import AndroidIcon from "./icon/android";
 import AppleIcon from "./icon/apple";
 import NpmIcon from "./icon/npm-icon";
+import Marquee from "react-fast-marquee";
+import {
+  farmbyteLogo,
+  ifgLifeLogo,
+  jasindo,
+  nuon,
+  oneByIfg,
+} from "@/assets/image";
+
+const clients = [
+  {
+    name: "Farmbyte",
+    img: farmbyteLogo,
+  },
+  {
+    name: "IFG Life",
+    img: ifgLifeLogo,
+  },
+  {
+    name: "Jasindo",
+    img: jasindo,
+  },
+  {
+    name: "Nuon",
+    img: nuon,
+  },
+  {
+    name: "One by IFG",
+    img: oneByIfg,
+  },
+];
 
 const projects = [
   {
@@ -100,17 +131,6 @@ const projects = [
     webUrl: "https://seedbyte.netlify.app/",
     npmUrl: "https://www.npmjs.com/package/rn-adaptbyte",
     company: "Farmbyte",
-  },
-  {
-    name: "Sagara AI ( Gemini API )",
-    img: "https://drive.google.com/uc?id=1cVFgmnT-NEA7cgSHRYo5PnQqTUftaKbU",
-    year: 2025,
-    category: "Web Application",
-    tech: ["Next JS", "Express JS"],
-    description:
-      "Sagara AI is generative text chat bot using Gemini API. Handle multi-turn conversation to manage context conversation between system and user. This project is requirements to pass Hacktiv8 Course Maju Bareng AI for Profesional Developer",
-    webUrl: "https://sagara-chatbot.vercel.app/",
-    company: "Personal",
   },
   {
     name: "Langit Musik Lite",
@@ -211,7 +231,22 @@ export default function Projects() {
             {t("projects.subtitle")}
           </p>
         </motion.div>
-
+        <Marquee pauseOnHover speed={50} className="my-12 mx-[-30px]">
+          {/* your logos/components here */}
+          {clients.map((item) => (
+            <div
+              style={{ width: window.innerWidth / clients.length }}
+              className="mr-8 md:mr-0"
+            >
+              <Image
+                key={item.name}
+                src={item.img}
+                alt={item.name}
+                className="w-[150px] h-[150px] md:w-[150px] md:h-[150px] object-contain"
+              />
+            </div>
+          ))}
+        </Marquee>
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -321,15 +356,15 @@ export default function Projects() {
                           </span>
                         </div>
                       )}
-                       {project.npmUrl && (
-                         <div
+                      {project.npmUrl && (
+                        <div
                           className="flex p-2 bg-white hover:bg-primary text-primary hover:text-white border-primary border-1 items-center rounded-md cursor-pointer"
                           onClick={() => window.open(project.npmUrl, "_blank")}
                         >
-                          <NpmIcon/>
+                          <NpmIcon />
                           <span className="text-xs ml-2 font-bold">NPM</span>
                         </div>
-                        )}
+                      )}
                     </div>
                   </div>
                 </div>

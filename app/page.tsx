@@ -8,6 +8,7 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import i18next from "i18next"
 import Stats from "@/components/stats"
+import FeaturedWorks from "@/components/featured-works"
 
 export default function Home() {
       if (!i18next.isInitialized) return null
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <Stats/>
       <Contributions />
+      <FeaturedWorks/>
       <Projects />
       <Contact />
       <Footer />

@@ -3,64 +3,32 @@
 import { motion } from "framer-motion";
 import { Code, Smartphone, Zap, Users } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Marquee from "react-fast-marquee";
-import {
-  farmbyteLogo,
-  ifgLifeLogo,
-  jasindo,
-  nuon,
-  oneByIfg,
-} from "@/assets/image";
-import Image from "next/image";
 
-const clients = [
+const contributions = [
   {
-    name: "Farmbyte",
-    img: farmbyteLogo,
+    icon: Code,
+    titleKey: "contributions.web.title",
+    descKey: "contributions.web.description",
   },
   {
-    name: "IFG Life",
-    img: ifgLifeLogo,
+    icon: Smartphone,
+    titleKey: "contributions.mobile.title",
+    descKey: "contributions.mobile.description",
   },
   {
-    name: "Jasindo",
-    img: jasindo,
+    icon: Zap,
+    titleKey: "contributions.performance.title",
+    descKey: "contributions.performance.description",
   },
   {
-    name: "Nuon",
-    img: nuon,
-  },
-  {
-    name: "One by IFG",
-    img: oneByIfg,
+    icon: Users,
+    titleKey: "contributions.collaboration.title",
+    descKey: "contributions.collaboration.description",
   },
 ];
 
 export default function Contributions() {
   const { t } = useTranslation();
-
-  const contributions = [
-    {
-      icon: Code,
-      titleKey: "contributions.web.title",
-      descKey: "contributions.web.description",
-    },
-    {
-      icon: Smartphone,
-      titleKey: "contributions.mobile.title",
-      descKey: "contributions.mobile.description",
-    },
-    {
-      icon: Zap,
-      titleKey: "contributions.performance.title",
-      descKey: "contributions.performance.description",
-    },
-    {
-      icon: Users,
-      titleKey: "contributions.collaboration.title",
-      descKey: "contributions.collaboration.description",
-    },
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -134,19 +102,6 @@ export default function Contributions() {
           })}
         </motion.div>
       </div>
-      <Marquee pauseOnHover speed={50} className="mt-12 mx-[-30px]">
-        {/* your logos/components here */}
-        {clients.map((item) => (
-          <div style={{ width: window.innerWidth / clients.length }} className="mr-8 md:mr-0">
-            <Image
-              key={item.name}
-              src={item.img}
-              alt={item.name}
-              className="w-[150px] h-[150px] md:w-[150px] md:h-[150px] object-contain"
-            />
-          </div>
-        ))}
-      </Marquee>
     </section>
   );
 }
