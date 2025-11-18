@@ -1,27 +1,28 @@
-"use client"
+"use client";
 
-import Header from "@/components/header"
-import Hero from "@/components/hero"
-import Contributions from "@/components/contributions"
-import Projects from "@/components/projects"
-import Contact from "@/components/contact"
-import Footer from "@/components/footer"
-import i18next from "i18next"
-import Stats from "@/components/stats"
-import FeaturedWorks from "@/components/featured-works"
+import Header from "@/components/header";
+import Hero from "@/components/hero";
+import Contributions from "@/components/contributions";
+import Projects from "@/components/projects";
+import Contact from "@/components/contact";
+import Footer from "@/components/footer";
+import i18next from "i18next";
+import Stats from "@/components/stats";
+import FeaturedWorks from "@/components/featured-works";
+import LandingDesign from "@/components/landing-design";
 
 export default function Home() {
-      if (!i18next.isInitialized) return null
+  if (!i18next.isInitialized) return null;
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Header />
       <Hero />
-      <Stats/>
       <Contributions />
-      <FeaturedWorks/>
-      <Projects />
+      <LandingDesign />
+      <Stats />
+      <FeaturedWorks />
       <Contact />
       <Footer />
     </main>
-  )
+  );
 }

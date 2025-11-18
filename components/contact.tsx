@@ -3,7 +3,7 @@
 import type React from "react";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CopyCheck } from "lucide-react";
+import { Mail, Phone, MapPin, Send, CopyCheck, MessageCircle } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -71,8 +71,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative min-h-screen">
+      <div className="h-12 bg-gradient-to-b from-purple-300 to-muted/10 w-full absolute inset-0" />
+      <div className="max-w-7xl mx-auto mt-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -116,7 +117,12 @@ export default function Contact() {
                         {method.label}
                       </p>
                       {showCopied === method.label && (
-                        <motion.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5}} className="flex items-center gap-3 transition">
+                        <motion.div
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ duration: 0.5 }}
+                          className="flex items-center gap-3 transition"
+                        >
                           <span className="text-xs text-green-600">
                             {t("contact.copied")}
                           </span>
@@ -165,7 +171,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
               >
-                {t("contact.sendEmail")} <Send size={18} />
+                {t("contact.sendEmail")} <Mail size={18} />
               </motion.button>
               <motion.a
                 target="_blank"
@@ -174,7 +180,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
               >
-                {t("contact.sendMessage")} <Send size={18} />
+                {t("contact.sendMessage")} <MessageCircle size={18} />
               </motion.a>
             </div>
           </motion.form>

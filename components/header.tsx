@@ -25,7 +25,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 w-full bg-background/80 backdrop-blur-md border-b border-border z-50">
+    <header className="fixed top-0 w-full bg-white/70 backdrop-blur-md z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
@@ -47,7 +47,7 @@ export default function Header() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
             >
               {item.label}
             </motion.a>

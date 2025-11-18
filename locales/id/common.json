@@ -36,7 +36,7 @@
       "title": "Solusi AI",
       "description": "Menerapkan platform AI yang terintegrasi secara menyeluruh ke dalam ekosistem bisnis Anda—meningkatkan otomatisasi, memperkuat pengambilan keputusan, serta membuka peluang baru untuk inovasi dan pertumbuhan."
     },
-    "appsShowcase": "Portofolio Pilihan",
+    "appsShowcase": "Aplikasi Kami",
     "appsShowcaseDesc": "Jelajahi koleksi aplikasi web dan mobile yang telah kami rancang dan kembangkan — setiap proyek dibuat dengan fokus pada performa, kemudahan penggunaan, dan desain modern. Dari antarmuka pengguna yang intuitif hingga arsitektur yang dapat diandalkan, proyek-proyek ini mencerminkan keahlian kami dalam menciptakan pengalaman digital yang memberikan nilai nyata bagi pengguna."
   },
   "projects": {
@@ -80,7 +80,7 @@
   },
   "contact": {
     "title": "Hubungi Kami",
-    "subtitle": "Memiliki proyek dalam pikiran? Mari berkolaborasi dan menciptakan sesuatu yang luar biasa bersama-sama",
+    "subtitle": "Punya ide proyek? Mari berkolaborasi dan menciptakan sesuatu yang luar biasa bersama-sama",
     "email": "Email",
     "phone": "Telepon",
     "location": "Lokasi",
@@ -110,5 +110,12 @@
     "linkedin": "LinkedIn",
     "twitter": "Twitter",
     "email": "Email"
+  },
+  "landingDesign": {
+    "title": "Jelajahi Koleksi Desain Web Kami",
+    "subtitle": "Temukan koleksi desain landing page yang dibuat untuk menginspirasi dan menarik perhatian."
+  },
+    "verbs":{
+    "open":"Buka"
   }
 }

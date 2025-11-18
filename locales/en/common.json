@@ -14,7 +14,7 @@
     "projects": "Projects Delivered",
     "team": "Team Members",
     "satisfaction": "Client Satisfaction",
-    "experience":"Years of experience",
+    "experience": "Years of experience",
     "tryNow": "Try Now"
   },
   "contributions": {
@@ -36,7 +36,7 @@
       "title": "AI Solutions",
       "description": "Implementing powerful AI platforms that integrate seamlessly into your business ecosystem—enhancing automation, improving decision-making, and unlocking new opportunities for innovation and growth."
     },
-    "appsShowcase": "Featured Works",
+    "appsShowcase": "Our Application",
     "appsShowcaseDesc": "Explore a collection of mobile and web applications We’ve designed and developed — each built with a focus on performance, usability, and modern design. From intuitive user interfaces to scalable architectures, these projects highlight our expertise in creating digital experiences that solve real-world problems and deliver value to users."
   },
   "projects": {
@@ -110,5 +110,12 @@
     "linkedin": "LinkedIn",
     "twitter": "Twitter",
     "email": "Email"
+  },
+  "landingDesign": {
+    "title": "Browse our web design collection",
+    "subtitle": "Discover a collection of landing page designs crafted to inspire and captivate."
+  },
+  "verbs":{
+    "open":"Open"
   }
 }

@@ -1,7 +1,9 @@
 "use client";
 
+import { IcBgContribution } from "@/assets/image";
 import { motion } from "framer-motion";
 import { Code, Smartphone, Zap, Users } from "lucide-react";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
 
 const contributions = [
@@ -51,8 +53,12 @@ export default function Contributions() {
   };
 
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="relative flex flex-col justify-center bg-muted/40 min-h-screen">
+      <div className="min-h-screen absolute inset-0">
+        <Image src={IcBgContribution} alt="hans-studio-bg-contribution" className="h-full z-0 object-cover"/>
+         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-0 lg:px-8 z-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,10 +66,10 @@ export default function Contributions() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-white">
             {t("contributions.title")}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-white max-w-2xl mx-auto">
             {t("contributions.subtitle")}
           </p>
         </motion.div>
@@ -82,7 +88,7 @@ export default function Contributions() {
                 key={i}
                 variants={itemVariants}
                 whileHover={{ y: -8 }}
-                className="p-6 bg-card border border-border rounded-xl hover:shadow-lg transition-shadow"
+                className="shadow-lg shadow-black p-6 bg-white/90 border border-border rounded-xl hover:shadow-lg transition-shadow"
               >
                 <motion.div
                   initial={{ rotate: 0 }}
