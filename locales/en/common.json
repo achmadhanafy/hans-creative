@@ -18,8 +18,8 @@
     "tryNow": "Try Now"
   },
   "contributions": {
-    "title": "Our Contributions",
-    "subtitle": "We specialize in delivering comprehensive technology solutions that drive business success",
+    "title": "Technology Solutions",
+    "subtitle": "We specialize in delivering comprehensive technology solutions designed to streamline operations, enhance efficiency, and drive long-term business success.",
     "web": {
       "title": "Web Application",
       "description": "Building responsive, performant websites and web applications using modern technologies and best practices."
@@ -112,7 +112,7 @@
     "email": "Email"
   },
   "landingDesign": {
-    "title": "Browse our web design templates collection",
+    "title": "Browse a collection of design templates perfect for your business.",
     "subtitle": "Discover a collection of landing page designs crafted to inspire and captivate."
   },
   "verbs":{
