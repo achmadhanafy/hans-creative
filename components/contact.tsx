@@ -71,8 +71,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/30 relative min-h-screen">
-      <div className="h-12 bg-gradient-to-b from-purple-300 to-muted/10 w-full absolute inset-0" />
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-white relative min-h-screen" style={{marginBottom: -400}}>
       <div className="max-w-7xl mx-auto mt-8">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

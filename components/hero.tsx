@@ -4,9 +4,11 @@ import { headerCta } from "@/assets/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { forwardRef } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function Hero() {
+const Hero = forwardRef<HTMLDivElement>((_, ref) => {
+
   const { t } = useTranslation();
 
   const containerVariants = {
@@ -30,7 +32,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 z-0">
       {/* Animated Background Elements */}
       <motion.div
         className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
@@ -88,6 +90,7 @@ export default function Hero() {
             </motion.div>
           </div>
           <motion.div
+            ref={ref}
             className="self-center relative w-full md:w-8/12 aspect-square"
             animate={{
               y: [0, -20, 0], // moves up and down
@@ -109,4 +112,6 @@ export default function Hero() {
       </motion.div>
     </section>
   );
-}
+})
+
+export default Hero;

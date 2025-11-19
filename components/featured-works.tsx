@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { ArrowRight } from "lucide-react";
 import i18next from "i18next";
+import { forwardRef } from "react";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -53,8 +54,8 @@ const featuredWorks = [
 ];
 
 
-function FeaturedWorks() {
-  const { t } = useTranslation();
+const FeaturedWorks = forwardRef<HTMLDivElement>((_, ref) => {
+   const { t } = useTranslation();
   return (
     <section id="featured-works" className="bg-muted/10">
       <motion.div
@@ -75,6 +76,7 @@ function FeaturedWorks() {
 
         {featuredWorks?.map((item, i) => (
           <motion.div
+            ref={i === featuredWorks.length - 1 ? ref : undefined}
             key={item.name}
             variants={itemVariants}
             className={cn(item.className, "text-left py-5")}
@@ -114,6 +116,6 @@ function FeaturedWorks() {
       </motion.div>
     </section>
   );
-}
+})
 
 export default FeaturedWorks;
