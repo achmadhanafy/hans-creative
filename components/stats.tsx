@@ -37,7 +37,7 @@ function Stats() {
     >
       {[
         { number: "15+", label: t("hero.projects") },
-        { number: `${calculateYearsDiff(new Date('03-01-2022'), new Date())}+`, label: t("hero.experience") },
+        { number: `${calculateYearsDiff(new Date('2022-03-01'), new Date())}+`, label: t("hero.experience") },
         { number: "100%", label: t("hero.satisfaction") },
       ].map((stat, i) => (
         <div key={i} className="text-center">

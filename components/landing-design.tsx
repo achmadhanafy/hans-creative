@@ -45,15 +45,15 @@ const ProjectCard = ({
 
         {/* Card Footer */}
         <div
-          className={`flex items-center justify-between p-4 gap-5 ${project.themeColor} bg-opacity-10`}
+          className={`flex items-center justify-between p-4 gap-5 bg-opacity-10`}
         >
           <span className="font-semibold">Fitness Club Landing Website</span>
           <Link href={project.url}>
             <span
               className={cn(
                 `px-3 py-1 rounded-full text-sm font-medium text-white`,
-                `bg-${project.themeColor.replace("bg-", "text-")}`
               )}
+              style={{backgroundColor: project.themeColor}}
             >
               {t("verbs.open")}
             </span>
@@ -94,7 +94,7 @@ function LadingDesign() {
             project={{
               title: "Hans Fitness",
               imgUrl: icHansFitnessDekstop,
-              themeColor: "orange-500",
+              themeColor: "#ff8d03",
               url: "/hans-fitness",
             }}
           />
