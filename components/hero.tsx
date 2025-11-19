@@ -51,9 +51,9 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-[1300px] mx-auto px-4 sm:p-6 lg:p-8 z-10 text-center"
+        className="max-w-[1300px] mx-auto px-4 sm:p-6 lg:p-8 z-10 text-center w-full"
       >
-        <div className="flex flex-col md:flex-row">
+        <div className="flex flex-col md:flex-row w-full">
           <div className="flex flex-col items-center justify-center md:items-start md:justify-start">
             <motion.div variants={itemVariants} className="inline-block my-6">
               <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium border border-primary/20">
@@ -88,7 +88,7 @@ export default function Hero() {
             </motion.div>
           </div>
           <motion.div
-            className="self-center"
+            className="self-center relative w-full md:w-8/12 aspect-square"
             animate={{
               y: [0, -20, 0], // moves up and down
             }}
@@ -100,8 +100,9 @@ export default function Hero() {
           >
             <Image
               src={headerCta}
-              className="w-full h-full object-contain"
+              className="w-full h-full"
               alt="3d-cta"
+              fill
             />
           </motion.div>
         </div>

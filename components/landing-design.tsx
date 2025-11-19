@@ -1,10 +1,28 @@
 "use client";
-import { icHansFitnessDekstop } from "@/assets/image";
+import { icHansFitnessDekstop, icTravelLux } from "@/assets/image";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
+import CarouselContainer from "./ui/carousel-container";
+
+const SLIDES = [
+  {
+    title: "Hans Fitness",
+    imgUrl: icHansFitnessDekstop,
+    themeColor: "#ff8d03",
+    url: "/hans-fitness",
+    description: "Fitness Club Landing Website"
+  },
+  {
+    title: "Travel Lux",
+    imgUrl: icTravelLux,
+    themeColor: "#3F51B5",
+    url: "/travel-lux",
+    description: "Agency Website - Tour & Travel"
+  },
+];
 
 const ProjectCard = ({
   project,
@@ -14,14 +32,14 @@ const ProjectCard = ({
     imgUrl: string | StaticImageData;
     themeColor: string;
     url: string;
+    description:string
   };
 }) => {
   const { t } = useTranslation();
   return (
     <motion.div
-      whileHover={{ scale: 1.03, y: -8 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="max-w-[400px] md:max-w-[800px] md:w-[800px] flex-shrink-0 bg-white rounded-xl shadow-2xl overflow-hidden ring-1 ring-gray-900/5 cursor-pointer"
+      className="flex-shrink-0 bg-white rounded-xl shadow-2xl overflow-hidden ring-1 ring-gray-900/5"
     >
       {/* Card Top (Browser Bar) */}
       <div className="max-w-screen">
@@ -47,13 +65,13 @@ const ProjectCard = ({
         <div
           className={`flex items-center justify-between p-4 gap-5 bg-opacity-10`}
         >
-          <span className="font-semibold">Fitness Club Landing Website</span>
-          <Link href={project.url}>
+          <span className="font-semibold">{project.description}</span>
+          <Link className="cursor-pointer" href={project.url} target="_blank">
             <span
               className={cn(
-                `px-3 py-1 rounded-full text-sm font-medium text-white`,
+                `px-6 py-2 rounded-full text-sm font-medium text-white`
               )}
-              style={{backgroundColor: project.themeColor}}
+              style={{ backgroundColor: project.themeColor }}
             >
               {t("verbs.open")}
             </span>
@@ -66,37 +84,36 @@ const ProjectCard = ({
 
 function LadingDesign() {
   const { t } = useTranslation();
+
   return (
     <section
       id="projects"
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/10 relative z-0 items-center relative flex flex-col"
+      className="py-20 bg-muted/10 relative z-0 items-center relative flex flex-col w-full"
     >
-      <div className="max-w-7xl mx-auto z-10">
+      <div className="z-10 w-full">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 2 }}
           viewport={{ once: true }}
-          className="text-center mb-12 z-10"
+          className="mb-12 z-10 px-4 sm:px-6 lg:px-8 flex flex-col items-center"
         >
-          <h2 className="text-4xl text-black sm:text-5xl font-bold mb-4 text-left max-w-[500px]">
-            {t("landingDesign.title")}
-          </h2>
+           <h2 className="text-4xl text-black sm:text-5xl font-bold text-center max-w-[800px] text-left">
+              {t("landingDesign.title")}
+            </h2>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           viewport={{ once: true }}
           transition={{ duration: 1 }}
-          whileInView={{ opacity: 1, y:0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           className="flex flex-col items-center"
         >
-          <ProjectCard
-            project={{
-              title: "Hans Fitness",
-              imgUrl: icHansFitnessDekstop,
-              themeColor: "#ff8d03",
-              url: "/hans-fitness",
-            }}
+          <CarouselContainer
+            datas={SLIDES}
+            renderSlide={(data) => (
+              <ProjectCard key={`${data?.title}`} project={data} />
+            )}
           />
         </motion.div>
       </div>

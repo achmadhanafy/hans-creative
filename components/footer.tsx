@@ -40,6 +40,8 @@ export default function Footer() {
                   alt="logo"
                   src={logo}
                   className="w-full h-full object-contain"
+                  fill
+                  sizes="64px"
                 />
               </div>
               <span className="font-bold text-lg">Hans Digital Studio</span>

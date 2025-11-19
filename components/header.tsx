@@ -34,7 +34,7 @@ export default function Header() {
           className="flex items-center gap-2"
         >
           <div className="w-12 h-12 bg-transparent rounded-lg flex items-center justify-center relative">
-            <Image className="w-full h-full object-contain" alt='logo' fill  src={logo}/>
+            <Image className="w-full h-full object-contain" alt='logo' sizes="50px" fill  src={logo}/>
           </div>
         </motion.div>
 

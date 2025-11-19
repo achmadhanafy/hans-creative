@@ -55,7 +55,7 @@ export default function Contributions() {
   return (
     <section id="about" className="relative flex flex-col justify-center bg-muted/40 min-h-screen">
       <div className="min-h-screen absolute inset-0">
-        <Image src={IcBgContribution} alt="hans-studio-bg-contribution" className="h-full z-0 object-cover"/>
+        <Image src={IcBgContribution} alt="hans-studio-bg-contribution" className="h-full z-0 object-cover" fill/>
          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
       </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-0 lg:px-8 z-10">
