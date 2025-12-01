@@ -6,6 +6,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import CarouselContainer from "./ui/carousel-container";
+import { HTMLProps } from "react";
 
 const SLIDES = [
   {
@@ -82,13 +83,13 @@ const ProjectCard = ({
   );
 };
 
-function LadingDesign() {
+function LadingDesign({className}: HTMLProps<HTMLDivElement>) {
   const { t } = useTranslation();
 
   return (
     <section
       id="projects"
-      className="py-20 bg-muted/10 relative z-0 items-center relative flex flex-col w-full"
+      className={cn("py-20 bg-muted/10 relative z-0 items-center relative flex flex-col w-full", className)}
     >
       <div className="z-10 w-full">
         <motion.div

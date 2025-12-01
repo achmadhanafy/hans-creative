@@ -77,8 +77,8 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en">
-      <body className={`font-sans antialiased`}>
+    <html lang="en" className="relative">
+      <body className={`font-sans antialiased relative`}>
         <I18nProvider>{children}</I18nProvider>
         <Analytics />
       </body>

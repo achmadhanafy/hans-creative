@@ -32,23 +32,7 @@ const Hero = forwardRef<HTMLDivElement>((_, ref) => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 z-0">
-      {/* Animated Background Elements */}
-      <motion.div
-        className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.5, 0.3, 0.5],
-        }}
-      />
-
+    <section className="min-h-screen flex items-center justify-center overflow-hidden pt-20 z-0 relative">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -106,6 +90,7 @@ const Hero = forwardRef<HTMLDivElement>((_, ref) => {
               className="w-full h-full"
               alt="3d-cta"
               fill
+              sizes="100%"
             />
           </motion.div>
         </div>

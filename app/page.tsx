@@ -38,16 +38,26 @@ export default function Home() {
   });
   const yFeaturedWork = useParallax(featuredWorksYProgress, 400);
 
+  const yHeroPosition = useSpring(yHero, {
+    stiffness: 50,
+    damping: 20,
+  });
+
+  const yFeaturedPosition = useSpring(yFeaturedWork, {
+    stiffness: 50,
+    damping: 20,
+  });
+
   if (!i18next.isInitialized) return null;
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-background text-foreground scroll-smooth">
       <Header />
       <Hero ref={heroRef} />
       <motion.div
         className="z-10"
-        initial={{ visibility: "hidden" }}
+        initial={{ visibility: "hidden", y:0 }}
         animate={{ visibility: "visible" }}
-        style={{ y: yHero, marginBottom: -550 }}
+        style={{ y: yHeroPosition, marginBottom: -550 }}
       >
         <Contributions />
       </motion.div>
@@ -57,7 +67,7 @@ export default function Home() {
       <motion.div // Hide until scroll progress is measured
         initial={{ visibility: "hidden" }}
         animate={{ visibility: "visible" }}
-        style={{ y: yFeaturedWork }}
+        style={{ y: yFeaturedPosition }}
       >
         <Contact />
       </motion.div>
