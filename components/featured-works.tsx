@@ -76,7 +76,6 @@ const FeaturedWorks = forwardRef<HTMLDivElement>((_, ref) => {
 
         {featuredWorks?.map((item, i) => (
           <motion.div
-            ref={i === featuredWorks.length - 1 ? ref : undefined}
             key={item.name}
             variants={itemVariants}
             className={cn(item.className, "text-left py-5")}
@@ -113,6 +112,7 @@ const FeaturedWorks = forwardRef<HTMLDivElement>((_, ref) => {
             </div>
           </motion.div>
         ))}
+        <motion.div ref={ref}/>
       </motion.div>
     </section>
   );
