@@ -10,68 +10,52 @@ import i18next from "i18next";
 import Stats from "@/components/stats";
 import FeaturedWorks from "@/components/featured-works";
 import LandingDesign from "@/components/landing-design";
-import {
-  motion,
-  MotionValue,
-  useMotionValueEvent,
-  useScroll,
-  useSpring,
-  useTransform,
-} from "framer-motion";
-import { useRef, useState } from "react";
-
-function useParallax(value: MotionValue<number>, distance: number) {
-  return useTransform(value, [0, 1], [-distance, distance]);
-}
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function Home() {
-  const featuredWorkRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
 
-  // Parallax Contribution
-  const { scrollYProgress: heroYProgress } = useScroll({ target: heroRef });
-  const yHero = useParallax(heroYProgress, 550);
-
-  // Parallax Contact
-  const { scrollYProgress: featuredWorksYProgress } = useScroll({
-    target: featuredWorkRef,
-  });
-  const yFeaturedWork = useParallax(featuredWorksYProgress, 400);
-
-  const yHeroPosition = useSpring(yHero, {
-    stiffness: 50,
-    damping: 20,
+  // Parallax for Hero
+  const { scrollYProgress: heroProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
   });
 
-  const yFeaturedPosition = useSpring(yFeaturedWork, {
-    stiffness: 50,
-    damping: 20,
-  });
+  const heroScale = useTransform(heroProgress, [0, 1], [1, 0.85]);
+  const heroOpacity = useTransform(heroProgress, [0, 1], [1, 0.3]);
+  const heroY = useTransform(heroProgress, [0, 1], [0, 100]);
 
   if (!i18next.isInitialized) return null;
+
   return (
-    <main className="min-h-screen bg-background text-foreground scroll-smooth">
+    <main className="bg-background text-foreground relative">
       <Header />
-      <Hero ref={heroRef} />
-      <motion.div
-        className="z-10"
-        initial={{ visibility: "hidden", y:0 }}
-        animate={{ visibility: "visible" }}
-        style={{ y: yHeroPosition, marginBottom: -550 }}
+
+      {/* Hero Section wrapper that stays fixed as we scroll past */}
+      <div
+        ref={heroRef}
+        className="h-screen w-full sticky top-0 left-0 z-10 overflow-hidden"
       >
+        <motion.div
+          style={{ scale: heroScale, opacity: heroOpacity, y: heroY }}
+          className="w-full h-full transform-gpu origin-top"
+        >
+          <Hero />
+        </motion.div>
+      </div>
+
+      <div className="relative z-10 bg-background rounded-t-[2.5rem] sm:rounded-t-[3rem] shadow-[0_-20px_50px_rgba(0,0,0,0.15)] border-t border-border/20 overflow-hidden">
         <Contributions />
-      </motion.div>
-      <LandingDesign />
-      <Stats />
-      <FeaturedWorks ref={featuredWorkRef} />
-      <motion.div // Hide until scroll progress is measured
-        initial={{ visibility: "hidden" }}
-        animate={{ visibility: "visible" }}
-        style={{ y: yFeaturedPosition }}
-      >
+        <LandingDesign />
+        <Stats />
+        <FeaturedWorks />
         <Contact />
-      </motion.div>
-      <Footer />
+      </div>
+
+      <div className="relative z-20">
+        <Footer />
+      </div>
     </main>
   );
 }

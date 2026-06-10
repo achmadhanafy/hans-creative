@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import I18nProvider from "@/lib/i18n-provider"
+import SmoothScrollProvider from "@/components/smooth-scroll-provider"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -79,7 +80,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="relative">
       <body className={`font-sans antialiased relative`}>
-        <I18nProvider>{children}</I18nProvider>
+        <I18nProvider>
+          <SmoothScrollProvider>
+            {children}
+          </SmoothScrollProvider>
+        </I18nProvider>
         <Analytics />
       </body>
     </html>
