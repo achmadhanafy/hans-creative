@@ -1,5 +1,5 @@
 "use client";
-import { icHansFitnessDekstop, icTravelLux } from "@/assets/image";
+import { icHansFitnessDekstop, icPortfolio, icTravelLux } from "@/assets/image";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
@@ -22,6 +22,13 @@ const SLIDES = [
     themeColor: "#3F51B5",
     url: "/travel-lux",
     description: "Agency Website - Tour & Travel"
+  },
+    {
+    title: "Hanafy Portfolio",
+    imgUrl: icPortfolio,
+    themeColor: "#FF8A4C",
+    url: "https://hanafy.hanstudio.app",
+    description: "Professional Portfolio"
   },
 ];
 

@@ -9,6 +9,10 @@ import {
   MonitorSmartphone,
   Calendar,
   Globe,
+  LineChart,
+  Bot,
+  Receipt,
+  PieChart,
 } from "lucide-react";
 import { forwardRef } from "react";
 import Link from "next/link";
@@ -63,15 +67,6 @@ const featuredWorks = [
         descId: "Pengalaman responsif penuh di desktop dan seluler.",
       },
     ],
-    tech: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "TypeScript",
-      "PDFLib",
-      "Supabase",
-    ],
-    year: 2025,
     webUrl: "https://cvbuilder.hanstudio.app/",
     displayUrl: "cvbuilder.hanstudio.app",
     img: "/images/apps/cv-builder-1.webp",
@@ -80,6 +75,57 @@ const featuredWorks = [
     className:
       "bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-950/20 dark:to-transparent",
   },
+  {
+  badge: "PROJECT SHOWCASE",
+  name: "InvestPick",
+  subtitle: "IDX Portfolio Tracker & AI Analytics Engine",
+  subtitleId: "Pelacak Portofolio IDX & Mesin Analisis Berbasis AI",
+  description:
+    "InvestPick is an advanced stock portfolio tracking and analytics platform tailored for the Indonesian Stock Exchange (IDX). It features real-time position tracking, automated ledger management, and AI-driven technical and fundamental analysis to deliver actionable trading signals.",
+  descriptionId:
+    "InvestPick adalah platform pelacakan dan analisis portofolio saham tingkat lanjut yang dirancang khusus untuk Bursa Efek Indonesia (BEI). Dilengkapi dengan pelacakan posisi real-time, manajemen pembukuan otomatis, serta analisis teknikal dan fundamental berbasis AI untuk memberikan sinyal investasi yang terukur.",
+  features: [
+    {
+      icon: LineChart,
+      title: "Real-Time Portfolio Tracking",
+      titleId: "Pelacakan Portofolio Real-Time",
+      desc: "Track holdings, cost basis, asset allocation, and unrealized/realized P&L dynamically.",
+      descId:
+        "Pantau kepemilikan saham, harga rata-rata, alokasi aset, serta P&L yang belum dan sudah direalisasikan secara dinamis.",
+    },
+    {
+      icon: Bot,
+      title: "AI Trade Analysis Engine",
+      titleId: "Mesin Analisis Transaksi AI",
+      desc: "Evaluate portfolio impact, technical risk metrics, and position concentration before executing trades.",
+      descId:
+        "Evaluasi dampak portofolio, metrik risiko teknikal, dan konsentrasi posisi sebelum melakukan transaksi.",
+    },
+    {
+      icon: Receipt,
+      title: "Deterministic Ledger",
+      titleId: "Pembukuan Deterministik",
+      desc: "Accurate weighted-average cost basis recalculation with cash balance impact simulation.",
+      descId:
+        "Rekalkulasi harga rata-rata secara presisi dengan simulasi dampak terhadap saldo kas RDN.",
+    },
+    {
+      icon: PieChart,
+      title: "Sector & Asset Allocation",
+      titleId: "Alokasi Sektor & Aset",
+      desc: "Visualize single-stock limits and sector exposure to keep risk within target caps.",
+      descId:
+        "Visualisasikan batasan saham tunggal dan paparan sektor untuk menjaga risiko tetap dalam batas target.",
+    },
+  ],
+  webUrl: "https://investpick.hanstudio.app/",
+  displayUrl: "investpick.hanstudio.app",
+  img: "/images/apps/investpick-showcase.webp",
+  textColor: "text-[#10b981]",
+  badgeColor: "bg-[#10b981]/20",
+  className:
+    "bg-gradient-to-b from-emerald-50/50 to-transparent dark:from-emerald-950/20 dark:to-transparent",
+}
 ];
 
 const FeaturedWorks = forwardRef<HTMLDivElement>((_, ref) => {
@@ -195,32 +241,8 @@ const FeaturedWorks = forwardRef<HTMLDivElement>((_, ref) => {
                     })}
                   </div>
 
-                  {/* Tech Stack */}
-                  <div className="mt-2">
-                    <h4 className={cn("font-semibold mb-3", item.textColor)}>
-                      Tech Stack
-                    </h4>
-                    <div className="flex flex-wrap gap-3">
-                      {item.tech.map((techItem, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center gap-2 px-4 py-2 bg-background border border-border shadow-sm rounded-lg text-sm font-semibold text-foreground"
-                        >
-                          <div className="w-2 h-2 rounded-full bg-blue-500" />
-                          {techItem}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
                   {/* Footer links / details */}
                   <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-4 pt-6 border-t border-border">
-                    <div className="flex items-center gap-2 text-muted-foreground font-medium">
-                      <Calendar size={18} className={cn(item.textColor)} />
-                      Project Year:{" "}
-                      <span className={cn(item.textColor)}>{item.year}</span>
-                    </div>
-                    <div className="hidden sm:block text-border">•</div>
                     <a
                       href={item.webUrl}
                       target="_blank"

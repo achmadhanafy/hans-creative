@@ -9,3 +9,4 @@ export const logo = '/logo.webp'
 export const icHansFitnessDekstop = '/hans-fitness-dekstop.webp'
 export const IcBgContribution = '/bg-contribution.webp'
 export const icTravelLux = "/travel-lux.webp"
+export const icPortfolio = "/images/apps/portfolio.webp"
