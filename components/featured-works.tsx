@@ -72,9 +72,9 @@ const featuredWorks = [
       "Supabase",
     ],
     year: 2025,
-    webUrl: "https://hans-cv-builder.vercel.app/",
-    displayUrl: "hans-cv-builder.vercel.app",
-    img: "https://drive.google.com/uc?id=1Xa70jqidh_LCIBUFzimSt-Guyuew55Ph",
+    webUrl: "https://cvbuilder.hanstudio.app/",
+    displayUrl: "cvbuilder.hanstudio.app",
+    img: "/images/apps/cvbuilder.webp",
     textColor: "text-blue-600",
     badgeColor: "bg-blue-100",
     className:
