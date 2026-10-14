@@ -74,7 +74,7 @@ const featuredWorks = [
     year: 2025,
     webUrl: "https://cvbuilder.hanstudio.app/",
     displayUrl: "cvbuilder.hanstudio.app",
-    img: "/images/apps/cvbuilder.webp",
+    img: "/images/apps/cv-builder-1.webp",
     textColor: "text-blue-600",
     badgeColor: "bg-blue-100",
     className:
@@ -257,7 +257,7 @@ const FeaturedWorks = forwardRef<HTMLDivElement>((_, ref) => {
                       src={item.img}
                       alt={item.name}
                       fill
-                      className="object-contain drop-shadow-2xl"
+                      className="object-fill drop-shadow-2xl rounded-2xl"
                       sizes="(max-width: 1024px) 100vw, 50vw"
                     />
                   </motion.div>
