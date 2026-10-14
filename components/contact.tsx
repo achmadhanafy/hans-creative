@@ -18,7 +18,7 @@ export default function Contact() {
     e.preventDefault();
     setFormData({ message: "" });
 
-    window.location.href = `mailto:achmadhanafy@gmail.com?subject=${encodeURIComponent(
+    window.location.href = `mailto:hello@hanstudio.app?subject=${encodeURIComponent(
       "Get In Touch"
     )}&body=${formData.message}`;
   };
@@ -27,7 +27,7 @@ export default function Contact() {
     {
       icon: Mail,
       label: t("contact.email"),
-      value: "achmadhanafy@gmail.com",
+      value: "hello@hanstudio.app",
     },
     {
       icon: Phone,
