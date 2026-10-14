@@ -2,10 +2,16 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { ArrowRight } from "lucide-react";
-import i18next from "i18next";
+import {
+  Pencil,
+  Eye,
+  Download,
+  MonitorSmartphone,
+  Calendar,
+  Globe,
+} from "lucide-react";
 import { forwardRef } from "react";
+import Link from "next/link";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -18,104 +24,252 @@ const itemVariants = {
 
 const featuredWorks = [
   {
+    badge: "PROJECT SHOWCASE",
     name: "CV Builder",
-    img: "https://drive.google.com/uc?id=1Xa70jqidh_LCIBUFzimSt-Guyuew55Ph",
-    year: 2025,
-    category: "Web Application",
-    tech: ["Next JS"],
-    title: "CV Builder to create a CV within a minutes",
+    subtitle: "Build Your Professional CV in Minutes",
+    subtitleId: "Buat CV Profesional Anda dalam Hitungan Menit",
     description:
-      "CV Builder is web application that provides users with a seamless experience to create and manage their CVs with prebuild templates. Users can easily create, edit, and download their CV as pdf, making it a convenient and efficient tool for job seekers and employers alike.",
+      "CV Builder is a web application that helps users create professional, tailored CVs quickly and easily. With a user-friendly interface and real-time preview, users can build, customize, and download their CVs in minutes.",
     descriptionId:
-      "CV Builder adalah aplikasi web yang memberikan pengalaman mudah bagi pengguna untuk membuat dan mengelola CV menggunakan template yang sudah disediakan. Pengguna dapat dengan mudah membuat, mengedit, dan mengunduh CV dalam bentuk PDF, menjadikannya alat yang praktis dan efisien bagi pencari kerja maupun perusahaan.",
+      "CV Builder adalah aplikasi web yang membantu pengguna membuat CV profesional yang disesuaikan dengan cepat dan mudah. Dengan antarmuka yang ramah pengguna dan pratinjau waktu nyata, pengguna dapat membuat, menyesuaikan, dan mengunduh CV mereka dalam hitungan menit.",
+    features: [
+      {
+        icon: Pencil,
+        title: "Easy to Use",
+        titleId: "Mudah Digunakan",
+        desc: "Intuitive form-based interface for a smooth CV building experience.",
+        descId:
+          "Antarmuka berbasis formulir yang intuitif untuk pengalaman membuat CV yang lancar.",
+      },
+      {
+        icon: Eye,
+        title: "Live Preview",
+        titleId: "Pratinjau Langsung",
+        desc: "Real-time preview ensures your CV looks perfect.",
+        descId: "Pratinjau waktu nyata memastikan CV Anda terlihat sempurna.",
+      },
+      {
+        icon: Download,
+        title: "Export as PDF",
+        titleId: "Ekspor sebagai PDF",
+        desc: "Download your CV in PDF format with one click.",
+        descId: "Unduh CV Anda dalam format PDF dengan satu klik.",
+      },
+      {
+        icon: MonitorSmartphone,
+        title: "Responsive Design",
+        titleId: "Desain Responsif",
+        desc: "Fully responsive experience across desktop and mobile.",
+        descId: "Pengalaman responsif penuh di desktop dan seluler.",
+      },
+    ],
+    tech: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "TypeScript",
+      "PDFLib",
+      "Supabase",
+    ],
+    year: 2025,
     webUrl: "https://hans-cv-builder.vercel.app/",
-    company: "Personal",
-    className: "bg-gradient-to-b from-muted/10 to-blue-200 text-blue-900",
-    buttonClassname:
-      "border-blue-900 border-2 text-blue-900 hover:bg-blue-900 hover:text-primary-foreground",
-  },
-  {
-    name: "Sagara AI ( Gemini API )",
-    img: "https://drive.google.com/uc?id=10Jepnieklu8BKcVQ77rt3NfraiDr7Lfd",
-    year: 2025,
-    category: "Web Application",
-    title: "Chatbot from Gemini API",
-    tech: ["Next JS", "Express JS"],
-    description:
-      "Sagara AI is a generative text chatbot using the Gemini API. It handles multi-turn conversations to maintain context between the system and the user. It also stores your conversation history, making it easier to manage ongoing interactions.",
-    descriptionId:
-      "Sagara AI adalah chatbot generatif berbasis teks yang menggunakan Gemini API. Sistem ini mendukung percakapan multi-turn untuk menjaga konteks antara sistem dan pengguna. Riwayat percakapan juga disimpan sehingga memudahkan pengguna dalam mengelola interaksi yang sedang berlangsung.",
-    webUrl: "https://sagara-chatbot.vercel.app/",
-    company: "Personal",
-    className: "bg-gradient-to-b from-blue-200 to-purple-300 text-purple-900",
-    buttonClassname:
-      "border-purple-900 border-2 text-purple-900 hover:bg-purple-900 hover:text-primary-foreground",
+    displayUrl: "hans-cv-builder.vercel.app",
+    img: "https://drive.google.com/uc?id=1Xa70jqidh_LCIBUFzimSt-Guyuew55Ph",
+    textColor: "text-blue-600",
+    badgeColor: "bg-blue-100",
+    className:
+      "bg-gradient-to-b from-blue-50/50 to-transparent dark:from-blue-950/20 dark:to-transparent",
   },
 ];
 
-
 const FeaturedWorks = forwardRef<HTMLDivElement>((_, ref) => {
-   const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
   return (
-    <section id="featured-works" className="bg-muted/10">
+    <section
+      id="featured-works"
+      className="bg-background pt-24 pb-12 overflow-hidden"
+    >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center mt-24"
+        className="text-center mb-16 px-4 sm:px-6 lg:px-8 max-w-[1300px] mx-auto"
       >
-        <div className="px-4 sm:px-6 lg:px-8 mb-8 max-w-[1300px] mx-auto">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-left">
-            {t("contributions.appsShowcase")}
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl text-left">
-            {t("contributions.appsShowcaseDesc")}
-          </p>
-        </div>
+        <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-left">
+          {t("contributions.appsShowcase", "Apps Showcase")}
+        </h2>
+        <p className="text-lg text-muted-foreground max-w-2xl text-left">
+          {t(
+            "contributions.appsShowcaseDesc",
+            "Explore some of the applications we've built.",
+          )}
+        </p>
+      </motion.div>
 
-        {featuredWorks?.map((item, i) => (
+      <div className="space-y-12">
+        {featuredWorks.map((item, i) => (
           <motion.div
             key={item.name}
             variants={itemVariants}
-            className={cn(item.className, "text-left py-5")}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className={cn(
+              "w-full py-12 lg:py-16 sm:rounded-3xl sm:mx-6 lg:mx-8 max-w-[1300px] xl:mx-auto border-y sm:border border-border/50 shadow-sm",
+              item.className,
+            )}
           >
-            <div className="max-w-[1300px] mx-auto px-4 sm:px-6 lg:px-8 ">
-              <div className={cn("flex flex-col gap-8", i % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row")}>
-                <motion.div
-                  whileHover={{ y: -8 }}
-                  className="w-full h-[200px] md:w-7/12 md:h-[500px] relative"
-                >
-                  <Image
-                    src={item.img}
-                    alt={item.name}
-                    className="w-full object-contain"
-                    fill
-                  />
-                </motion.div>
-                <div className="w-full md:w-5/12">
-                  <p className="text-4xl font-bold mb-2">{item.title}</p>
-                  <p className="text-xs mb-5 font-light">{item.category}</p>
-                  <p className="">{i18next.language === 'id' ? item.descriptionId : item.description}</p>
-                  <a
-                    href={item.webUrl}
-                    target="_blank"
-                    className={cn(
-                      item.buttonClassname,
-                      "w-fit mt-5 px-8 py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2"
-                    )}
-                  >
-                    {t("hero.tryNow")} <ArrowRight size={18} />
-                  </a>
+            <div className="px-4 sm:px-8 lg:px-12">
+              <div
+                className={cn(
+                  "flex flex-col lg:flex-row gap-12 lg:gap-16 items-center",
+                  i % 2 !== 0 ? "lg:flex-row-reverse" : "",
+                )}
+              >
+                {/* Left Content */}
+                <div className="w-full lg:w-1/2 flex flex-col gap-8">
+                  {/* Header Area */}
+                  <div className="flex flex-col gap-4">
+                    <div
+                      className={cn(
+                        "w-fit px-4 py-1.5 rounded-md text-sm font-bold tracking-wider",
+                        item.textColor,
+                        item.badgeColor,
+                      )}
+                    >
+                      {item.badge}
+                    </div>
+
+                    <div className="flex flex-col gap-2">
+                      <h3 className="text-4xl sm:text-5xl font-extrabold text-foreground tracking-tight">
+                        {item.name}
+                      </h3>
+                      <p
+                        className={cn(
+                          "text-xl sm:text-2xl font-semibold",
+                          item.textColor,
+                        )}
+                      >
+                        {i18n.language === "id"
+                          ? item.subtitleId
+                          : item.subtitle}
+                      </p>
+                    </div>
+
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      {i18n.language === "id"
+                        ? item.descriptionId
+                        : item.description}
+                    </p>
+                  </div>
+
+                  {/* Features Grid */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-2">
+                    {item.features.map((feature, idx) => {
+                      const Icon = feature.icon;
+                      return (
+                        <div key={idx} className="flex gap-4">
+                          <div className="flex-shrink-0 w-12 h-12 bg-background shadow-sm rounded-xl flex items-center justify-center border border-border">
+                            <Icon
+                              className={cn(item.textColor)}
+                              size={24}
+                              strokeWidth={2}
+                            />
+                          </div>
+                          <div className="flex flex-col gap-1">
+                            <h4 className="font-semibold text-foreground">
+                              {i18n.language === "id"
+                                ? feature.titleId
+                                : feature.title}
+                            </h4>
+                            <p className="text-sm text-muted-foreground leading-snug">
+                              {i18n.language === "id"
+                                ? feature.descId
+                                : feature.desc}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Tech Stack */}
+                  <div className="mt-2">
+                    <h4 className={cn("font-semibold mb-3", item.textColor)}>
+                      Tech Stack
+                    </h4>
+                    <div className="flex flex-wrap gap-3">
+                      {item.tech.map((techItem, idx) => (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-2 px-4 py-2 bg-background border border-border shadow-sm rounded-lg text-sm font-semibold text-foreground"
+                        >
+                          <div className="w-2 h-2 rounded-full bg-blue-500" />
+                          {techItem}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Footer links / details */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-4 pt-6 border-t border-border">
+                    <div className="flex items-center gap-2 text-muted-foreground font-medium">
+                      <Calendar size={18} className={cn(item.textColor)} />
+                      Project Year:{" "}
+                      <span className={cn(item.textColor)}>{item.year}</span>
+                    </div>
+                    <div className="hidden sm:block text-border">•</div>
+                    <a
+                      href={item.webUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-muted-foreground font-medium transition-colors group"
+                    >
+                      <Globe
+                        size={18}
+                        className={cn("transition-colors", item.textColor)}
+                      />
+                      Live Demo:{" "}
+                      <span
+                        className={cn("group-hover:underline", item.textColor)}
+                      >
+                        {item.displayUrl}
+                      </span>
+                    </a>
+                  </div>
                 </div>
+
+                {/* Right Content / Image */}
+                <Link
+                  href={item.webUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full lg:w-1/2 relative flex justify-center items-center"
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                    className="relative w-full aspect-square max-w-[600px]"
+                  >
+                    <Image
+                      src={item.img}
+                      alt={item.name}
+                      fill
+                      className="object-contain drop-shadow-2xl"
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                  </motion.div>
+                </Link>
               </div>
             </div>
           </motion.div>
         ))}
-        <motion.div ref={ref}/>
-      </motion.div>
+      </div>
+      <div ref={ref} />
     </section>
   );
-})
+});
 
 export default FeaturedWorks;
